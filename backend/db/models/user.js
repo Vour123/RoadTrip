@@ -8,7 +8,7 @@ module.exports = (sequelize, DataTypes) => {
       type: DataTypes.STRING,
       allowNull: false,
       validate: {
-        len: [3, 30],
+        len: [4, 30],
         isNotEmail(value) {
           if (Validator.isEmail(value)) {
             throw new Error('Cannot be an email.');
@@ -47,20 +47,24 @@ module.exports = (sequelize, DataTypes) => {
     },
   });
 
-  User.prototype.toSafeObject = function () {
+  
+  User.prototype.toSafeObject = function() {
     const { id, username, email } = this;
-    return { id, username, email };  
+    return { id, username, email };
   };
 
+  
   User.prototype.validatePassword = function (password) {
-    return bcrypt.compareSync(password, this.hashedPassword.toString());
+    return bcrypt.compareSync(password, this.hashedPassword.toString())
   };
 
-  User.getCurrentUserById = async function (id) {
+  
+  User.getCurrentUserById = async function(id) {
     return await User.scope('currentUser').findByPk(id);
-   };
+  }
 
-   User.login = async function ({ credential, password }) {
+
+  User.login = async function ({ credential, password }) {
     const { Op } = require('sequelize');
     const user = await User.scope('loginUser').findOne({
       where: {
@@ -80,10 +84,10 @@ module.exports = (sequelize, DataTypes) => {
     const user = await User.create({
       username,
       email,
-      hashedPassword,
+      hashedPassword
     });
     return await User.scope('currentUser').findByPk(user.id);
-  };
+  }
 
   User.associate = function(models) {
     // associations can be defined here
