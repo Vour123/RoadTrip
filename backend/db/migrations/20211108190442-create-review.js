@@ -8,10 +8,6 @@ module.exports = {
         primaryKey: true,
         type: Sequelize.INTEGER
       },
-      id: {
-        allowNull: false,
-        type: Sequelize.INTEGER
-      },
       userId: {
         allowNull: false,
         type: Sequelize.INTEGER
@@ -22,7 +18,7 @@ module.exports = {
       },
       review: {
         allowNull: false,
-        type: Sequelize.TEXT
+        type: Sequelize.TEXT(2000)
       },
       createdAt: {
         allowNull: false,
