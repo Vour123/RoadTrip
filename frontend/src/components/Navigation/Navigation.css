@@ -1,0 +1,10 @@
+.nav-bar{
+    display: flex;
+    justify-content: flex-end;
+}
+
+.nav-button{
+    padding: 10px;
+    text-decoration: none;
+}
+
