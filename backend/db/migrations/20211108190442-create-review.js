@@ -16,12 +16,11 @@ module.exports = {
       carId: {
         allowNull: false,
         type: Sequelize.INTEGER,
-        references: {model:"Users"},
         references: {model:"Cars"}
       },
       review: {
         allowNull: false,
-        type: Sequelize.TEXT(2000)
+        type: Sequelize.STRING(2000)
       },
       createdAt: {
         allowNull: false,
