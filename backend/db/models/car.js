@@ -11,7 +11,10 @@ module.exports = (sequelize, DataTypes) => {
     price: DataTypes.DECIMAL
   }, {});
   Car.associate = function(models) {
-    // associations can be defined here
+    Car.hasMany(models.Review, {foreignKey:"carId", onDelete:"cascade", hooks:true});
+    Car.hasMany(models.Booking, {foreignKey:"carId", onDelete:"cascade", hooks:true});
+    Car.hasMany(models.Image, {foreignKey:"carId", onDelete:"cascade", hooks:true});
+    Car.belongsTo(models.User, {foreignKey:"userId"});
   };
   return Car;
 };
