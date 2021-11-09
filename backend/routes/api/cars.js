@@ -8,10 +8,10 @@ const db = require('../../db/models');
 const { Car, User, Image } = db;
 
 router.get('/', asyncHandler(async(req, res) => {
-    const listings = await Car.findAll({
+    const cars = await Car.findAll({
         include:[{model:Image},{model:User}]
     });
-    res.json({listings});
+    res.json({cars});
 }));
 
 module.exports = router;
