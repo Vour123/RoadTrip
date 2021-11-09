@@ -7,7 +7,6 @@ import CarCardDetails from '../CarCardDetails/index';
 const Cars = () => {
     const cars = useSelector((state) => Object.values(state.car));
     const dispatch = useDispatch();
-    console.log('cars', cars);
 
     useEffect(() => {
         dispatch(getAllCars());
@@ -16,15 +15,15 @@ const Cars = () => {
     return (
         <div>
             <div className='cars-cards-container'>
-                {cars.length > 0 ? cars.map(({id, image, price, name}) => {
-                    <div>hi</div>
-                    // <CarCardDetails
-                    // key={id}
-                    // id={id}
-                    // image={image}
-                    // name={name}
-                    // price={price}
-                    // />
+                {cars.length > 0 ? cars.map(({id, Images, price, name}) => 
+                { return (
+                    <CarCardDetails
+                    key={id}
+                    id={id}
+                    image={Images[0].url}
+                    name={name}
+                    price={price}
+                    />)
                 }): null}
             </div>
         </div>

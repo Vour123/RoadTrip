@@ -3,7 +3,7 @@ const CarCardDetails = ({image, name, price}) => {
         <div className='car-card'>
             <img src={image} alt={image}/>
             <span className='car-title'>{name}</span>
-            <span>{price}</span>
+            <span className='price'>{price}</span>
         </div>
     )
 } 
