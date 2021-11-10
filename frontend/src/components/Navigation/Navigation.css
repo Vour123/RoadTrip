@@ -1,10 +1,10 @@
 .nav-bar{
     display: flex;
     justify-content: flex-end;
+    border: 1px solid black
 }
 
 .nav-button{
     padding: 10px;
     text-decoration: none;
 }
-
