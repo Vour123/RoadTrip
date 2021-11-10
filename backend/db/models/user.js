@@ -94,5 +94,6 @@ module.exports = (sequelize, DataTypes) => {
     User.hasMany(models.Car, {foreignKey:"userId", onDelete:"cascade", hooks:true});
     User.hasMany(models.Review, {foreignKey:"userId", onDelete:"cascade", hooks:true});
   };
+  
   return User;
 };
