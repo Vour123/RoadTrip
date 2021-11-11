@@ -32,7 +32,7 @@ const BookingBox = () => {
         };
         dispatch(postBooking(bookingInfo));
 
-        history.push('/');
+        history.push(`/profile/${id}`);
     };  
 
     const handleSelect = (ranges) => {
