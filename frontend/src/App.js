@@ -6,6 +6,7 @@ import * as sessionActions from "./store/session";
 import Navigation from "./components/Navigation";
 import  Cars  from "./components/CarCards";
 import OneCar from "./components/SingleCarPage";
+import ProfilePage from "./components/ProfilePage";
 
 function App() {
   const dispatch = useDispatch();
@@ -27,6 +28,9 @@ function App() {
           </Route>
           <Route path='/cars/:id'>
             <OneCar />
+          </Route>
+          <Route path='/profile/:id'>
+            <ProfilePage />
           </Route>
         </Switch>
       )}

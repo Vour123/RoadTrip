@@ -4,7 +4,7 @@ const { check } = require('express-validator');
 
 const { handleValidationErrors } = require('../../utils/validation');
 const { setTokenCookie, requireAuth } = require('../../utils/auth');
-const { User } = require('../../db/models');
+const { User, Booking, Car, Image } = require('../../db/models');
 
 const router = express.Router();
 
@@ -42,5 +42,25 @@ router.post(
     });
   }),
 );
+
+router.get('/profile/:id(\\d+)', asyncHandler(async(req, res) => {
+  const { id } = req.params;
+  const usersBooking = await Booking.findAll({
+    include:[{model: Car}],
+    where: {
+      userId: id
+    } 
+  });
+
+  if (!usersBooking) {
+        const err = new Error('Could not find any bookings.');
+        err.status = 401;
+        err.title = 'Profile';
+        err.errors = ['Could not find existing bookings'];
+        return next(err);
+  } 
+
+   res.json(usersBooking);
+}));
 
 module.exports = router;

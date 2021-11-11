@@ -29,4 +29,23 @@ router.post('/', asyncHandler(async(req, res) => {
     return res.json({booking});
 }));
 
+router.delete('/:id(\\d+)', asyncHandler(async(req, res, next) => {
+    const bookingId  = req.params.id;
+    if(bookingId) {
+        const booking = await Booking.findByPk(bookingId);
+        await booking.destroy();
+        res.json(booking);
+    } 
+}));
+
+router.put('/:id(\\d+)', asyncHandler(async(req, res, next) => {
+    const bookingId = req.params.id;
+    const {startDate, endDate} = req.body;
+    if(bookingId) {
+        const booking = await Booking.findByPk(bookingId);
+        await booking.update({startDate, endDate});
+        res.json(booking);
+    }
+}));
+
 module.exports = router;
