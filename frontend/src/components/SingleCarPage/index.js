@@ -19,7 +19,7 @@ const OneCar = () => {
     },[dispatch]);
     
     const oneCar = useSelector((state) => state.car.current);
-    console.log('onecar', oneCar.name);
+
     return isLoaded && ( 
         <div className='single-car-page'>
             { oneCar ? 

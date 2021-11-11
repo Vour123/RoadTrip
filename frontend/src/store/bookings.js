@@ -7,10 +7,21 @@ const addBooking = (booking) => ({
     booking
 })
 
-export const postBooking = () => async(dispatch) => {
-    const res = csrfFetch('/api/bookings', {
+export const postBooking = (bookingInfo) => async(dispatch) => {
+    const {
+        userId,
+        carId,
+        startDate,
+        endDate
+    } = bookingInfo
+    const res = await csrfFetch('/api/bookings', {
         method: "POST",
-        // body: {userId, carId, startDate, endDate}
+        body: JSON.stringify({
+            userId, 
+            carId, 
+            startDate, 
+            endDate
+        })
     })
     const bookingData = await res.json();
     dispatch(addBooking(bookingData));
