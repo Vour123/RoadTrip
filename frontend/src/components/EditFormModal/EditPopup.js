@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useHistory } from "react-router";
 import { DateRange } from 'react-date-range';
-import * as sessionActions from "../../store/session";
 import { updateBookingDates } from '../../store/bookings';
 
 import 'react-date-range/dist/styles.css'; // main style file

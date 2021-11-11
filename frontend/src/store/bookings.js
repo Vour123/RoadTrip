@@ -99,7 +99,7 @@ const bookingReducer = (state = {all: {} ,current: {}}, action) => {
             return newState;
         case UPDATE_BOOKING:
             newState = {...state};
-            newState[action.booking.id] = action.booking;
+            newState.all[action.booking.id] = action.booking;
             return newState;
         default:
             return state;
