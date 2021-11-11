@@ -7,7 +7,7 @@ const EditFormModal = () => {
 
     return (
         <>
-          <button onClick={() => setShowModal(true)}>Edit reseveration dates</button>
+          <button onClick={() => setShowModal(true)}>Edit reservation dates</button>
           {showModal && (
             <Modal onClose={() => setShowModal(false)}>
                 <EditPopup setShowModal={setShowModal}/>

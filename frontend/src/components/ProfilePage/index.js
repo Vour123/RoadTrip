@@ -30,11 +30,11 @@ const ProfilePage = () => {
                     <h1 className='user-name'>{sessionUser.username}</h1>
                 </div>
                 <div className='user-booking-info-container'>
-                    <p>You have a reseveration for a: {booking[0].Car.name}</p>
+                    <p>You have a reservation for a: {booking[0].Car.name}</p>
                     <p> starting on: {booking[0].startDate}</p>
                     <p>and ending on: {booking[0].endDate}</p>
                 </div>
-                <button className='delete-button' type='submit' onClick={() => handleDelete(booking[0].id)}>Cancel reseveration</button>
+                <button className='delete-button' type='submit' onClick={() => handleDelete(booking[0].id)}>Cancel reservation</button>
                 {/* <button className='edit-button' onClick={}>Edit reseveration dates</button> */}
                 <EditFormModal/>
             </>
@@ -42,7 +42,7 @@ const ProfilePage = () => {
                 <div className='user-info'>
                     <h1 className='user-name'>{sessionUser.username}</h1>
                 </div>
-                <h5>You have no current reseveration!</h5>
+                <h5>You have no current reservations!</h5>
             </>}
         </div>
     )
