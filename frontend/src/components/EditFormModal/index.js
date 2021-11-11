@@ -10,7 +10,7 @@ const EditFormModal = () => {
           <button onClick={() => setShowModal(true)}>Edit reseveration dates</button>
           {showModal && (
             <Modal onClose={() => setShowModal(false)}>
-                <EditPopup />
+                <EditPopup setShowModal={setShowModal}/>
             </Modal>
           )}
         </>

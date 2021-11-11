@@ -3,7 +3,6 @@ import { useDispatch, useSelector } from 'react-redux';
 import { NavLink, useParams, useHistory } from 'react-router-dom';
 import { getUserBooking, unreserve } from '../../store/bookings';
 import EditFormModal from '../EditFormModal';
-import EditPopup from '../EditFormModal/EditPopup';
 
 const ProfilePage = () => {
     const booking = useSelector(state => Object.values(state.booking.all));
@@ -37,7 +36,7 @@ const ProfilePage = () => {
                 </div>
                 <button className='delete-button' type='submit' onClick={() => handleDelete(booking[0].id)}>Cancel reseveration</button>
                 {/* <button className='edit-button' onClick={}>Edit reseveration dates</button> */}
-                <EditPopup/>
+                <EditFormModal/>
             </>
             : <>
                 <div className='user-info'>

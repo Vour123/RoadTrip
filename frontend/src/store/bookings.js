@@ -40,7 +40,7 @@ export const unreserve = (id) => async(dispatch) => {
 export const updateBookingDates = (bookingInfo, id) => async(dispatch) => {
     const {startDate, endDate} = bookingInfo;
 
-    const res = await csrfFetch (`/api/bookings${id}`, {
+    const res = await csrfFetch (`/api/bookings/${id}`, {
         method: "PUT",
         body: JSON.stringify({startDate, endDate})
     })
