@@ -23,7 +23,7 @@ const DeletePopUp = () => {
     return (
         <div className='delete-modal'>
             <p className='delete-modal-text'> Are you sure you want to delete this reservation</p>
-            <button className='delete-button' onClick={() => handleDelete(booking[0].id)}>
+            <button className='delete-button' onClick={handleDelete}>
                 Delete
             </button>
         </div>

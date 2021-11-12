@@ -13,6 +13,7 @@ const OneCar = () => {
     const [isLoaded, setIsLoaded] = useState(false);
     const dispatch = useDispatch();
     const { id } = useParams();
+    console.log('oneCar state', oneCar);
     
 
     useEffect(() => {
