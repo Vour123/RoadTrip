@@ -27,5 +27,19 @@ router.delete('/:id(\\d+)', asyncHandler(async(req, res) => {
     }
 }));
 
+router.post('/', asyncHandler(async(req,res) => {
+    const {userId, city, state, name, price} = req.body;
+    const newCar = await Car.create({userId, city, state, name, price});
+
+    if (!newCar) {
+        const err = new Error('Listing Failed');
+        err.status = 401;
+        err.title = 'The Listing was not able to complete';
+        err.errors = ['The Listing was not able to complete'];
+        return next(err);
+        }
+    return res.json(newCar);
+}));
+
 
 module.exports = router;
