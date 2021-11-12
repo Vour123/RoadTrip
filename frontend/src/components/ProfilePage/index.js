@@ -34,12 +34,10 @@ const ProfilePage = () => {
                     <p> starting on: {booking[0]?.startDate}</p>
                     <p>and ending on: {booking[0]?.endDate}</p> 
                 </div>
-                {/* <button className='delete-button' type='submit' onClick={() => handleDelete(booking[0].id)}>Cancel reservation</button> */}
-                {/* <button className='edit-button' onClick={}>Edit reseveration dates</button> */}
                 <DeleteConfirmationModal />
                 <EditFormModal />
             </>
-            : <>
+            :<>
                 <div className='user-info'>
                     <h1 className='user-name'>{sessionUser.username}</h1>
                 </div>
