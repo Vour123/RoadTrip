@@ -10,11 +10,21 @@ const { Car, Image, User } = db;
 router.get('/:id(\\d+)', asyncHandler(async(req, res) => {
     const userId = req.params.id
     const cars = await Car.findAll({
+        include: [{model: Image}],
         where: {
             userId
         }
     })
     return res.json(cars);
+}));
+
+router.delete('/:id(\\d+)', asyncHandler(async(req, res) => {
+    const carId = req.params.id;
+    if(carId) {
+        const car = await Car.findByPk(carId);
+        await car.destroy();
+        res.json(car);
+    }
 }));
 
 

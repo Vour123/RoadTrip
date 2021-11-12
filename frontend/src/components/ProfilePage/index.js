@@ -5,20 +5,22 @@ import { getUserBooking, unreserve } from '../../store/bookings';
 import { getListings } from '../../store/listings';
 import EditFormModal from '../EditFormModal';
 import DeleteConfirmationModal from '../DeleteConfirmationModal';
+import CarCardDetails from '../CarCardDetails';
 
 const ProfilePage = () => {
     const booking = useSelector(state => Object.values(state.booking.all));
     const sessionUser = useSelector(state => state.session.user)
     const listings = useSelector(state => Object.values(state.listings.all))
+    const [isLoaded, setIsLoaded] = useState(false);
     const history = useHistory();
-    
+        
     const dispatch = useDispatch();
     const { id } = useParams();
-    console.log('listings', listings);
+    console.log('listings', listings[0]);
 
      useEffect(() => {
-        dispatch(getUserBooking(id))
-        dispatch(getListings(id))
+        dispatch(getUserBooking(id)).then(() => setIsLoaded(true));
+        dispatch(getListings(id)).then(() => setIsLoaded(true));
     },[dispatch, id])
 
     return (
@@ -26,7 +28,21 @@ const ProfilePage = () => {
             <div className='owner-listing-container'>
                 <div className='owner-car-info'>
                     <h2>Your Listings!</h2>
-                    <p>{listings[0].name}</p>
+                    {listings.map(({id, Images, price, name}) => 
+                    { return (
+                        <div>
+                            <NavLink to={`/cars/${id}`}>
+                                <CarCardDetails
+                                key={id}
+                                id={id}
+                                image={Images[0].url}
+                                name={name}
+                                price={price}
+                                />
+                            </NavLink>
+                        </div>
+                        )
+                    })}
                 </div>
             </div>
             <div className='reservation-box'>
