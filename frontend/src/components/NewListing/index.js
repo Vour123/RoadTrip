@@ -6,7 +6,12 @@ const NewListing = () => {
 
     return (
         <div>
-            hi hello i am here.
+            <h1 className='title'>
+                List your car down below!
+            </h1>
+            <p>
+
+            </p>
         </div>
     );
 
