@@ -28,8 +28,10 @@ router.delete('/:id(\\d+)', asyncHandler(async(req, res) => {
 }));
 
 router.post('/', asyncHandler(async(req,res) => {
-    const {userId, city, state, name, price} = req.body;
+    console.log('req.bodyyyyyyy', req.body);
+    const {userId, city, state, name, price, imageUrl} = req.body;
     const newCar = await Car.create({userId, city, state, name, price});
+    const newImage = await Image.create({url: imageUrl, carId: newCar.id})
 
     if (!newCar) {
         const err = new Error('Listing Failed');

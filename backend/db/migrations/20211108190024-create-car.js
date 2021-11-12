@@ -22,7 +22,6 @@ module.exports = {
         type: Sequelize.STRING(30)
       },
       country: {
-        allowNull: false,
         type: Sequelize.STRING(30)
       },
       name: {

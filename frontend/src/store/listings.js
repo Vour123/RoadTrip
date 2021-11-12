@@ -37,22 +37,9 @@ export const deleteOwnerListing = (id) => async(dispatch) => {
 }
 
 export const newListing = (listingInfo) => async(dispatch) => {
-    const {
-        userId,
-        city,
-        state,
-        name,
-        price
-    } = listingInfo
     const res = await csrfFetch('/api/listings', {
         method: "POST",
-        body: JSON.stringify({
-            userId,
-            city,
-            state,
-            name,
-            price
-        })
+        body: JSON.stringify(listingInfo)
     })
     const listingData = await res.json();
     dispatch(postListing(listingData));

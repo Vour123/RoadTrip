@@ -4,6 +4,7 @@ import { csrfFetch } from './csrf';
 const GET_CARS = 'car/getCars';
 const GET_ONE_CAR = 'car/getCar'
 const DELETE_LISTINGS = 'lisitng/deleteListing';
+const NEW_LISTING = 'listing/postListing';
 
 
 const getCars = (cars) => ({
@@ -53,7 +54,7 @@ const carReducer = (state = {all: {},current: {}}, action) => {
             newState = {...state}
             delete newState.all[action.listing.id]
             return newState;
-        case NEW_LISTINGS:
+        case NEW_LISTING:
             newState = {...state};
             newState.all[action.listing.id] = action.listing
             return newState;
