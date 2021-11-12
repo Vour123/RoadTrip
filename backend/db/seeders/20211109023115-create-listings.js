@@ -21,6 +21,84 @@ module.exports = {
         name: "Audi RS5",
         tags: "Audi",
         price: 100
+      },
+      {
+        userId: 1,
+        city: "McAllen",
+        state: "Texas",
+        country: "USA",
+        name: "BMW M3",
+        tags: "BMW",
+        price: 190
+      },
+      {
+        userId: 1,
+        city: "McAllen",
+        state: "Texas",
+        country: "USA",
+        name: "BMW M3",
+        tags: "BMW",
+        price: 175
+      }
+      ,
+      {
+        userId: 1,
+        city: "McAllen",
+        state: "Texas",
+        country: "USA",
+        name: "BMW M3",
+        tags: "BMW",
+        price: 175
+      }
+      ,
+      {
+        userId: 1,
+        city: "McAllen",
+        state: "Texas",
+        country: "USA",
+        name: "BMW M3",
+        tags: "BMW",
+        price: 175
+      }
+      ,
+      {
+        userId: 1,
+        city: "McAllen",
+        state: "Texas",
+        country: "USA",
+        name: "BMW M3",
+        tags: "BMW",
+        price: 175
+      }
+      ,
+      {
+        userId: 1,
+        city: "McAllen",
+        state: "Texas",
+        country: "USA",
+        name: "BMW M3",
+        tags: "BMW",
+        price: 175
+      }
+      ,
+      {
+        userId: 1,
+        city: "McAllen",
+        state: "Texas",
+        country: "USA",
+        name: "BMW M3",
+        tags: "BMW",
+        price: 175
+      }
+      ,
+      {
+        userId: 1,
+        city: "McAllen",
+        state: "Texas",
+        country: "USA",
+        name: "BMW M3",
+        tags: "BMW",
+        price: 175
       }
     ],
     {}

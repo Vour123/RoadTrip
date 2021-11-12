@@ -46,7 +46,10 @@ function ProfileButton({ user }) {
           <NavLink to={`/profile/${id}`}>{user.username}</NavLink>
           <li>{user.email}</li>
           <li>
-            <button onClick={logout} className='nav-button'>Log Out</button>
+            <a className='post-button' href='/new-listing'>Post Your Car!</a>
+          </li>
+          <li>
+            <a onClick={logout} className='nav-a'>Log Out</a>
           </li>
         </ul>
       )}

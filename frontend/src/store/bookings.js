@@ -30,7 +30,6 @@ export const unreserve = (id) => async(dispatch) => {
         method: "DELETE"
     })
     const booking = await res.json();
-    console.log(booking);
     if(res.ok) {
         dispatch(deleteBooking(booking));
         return booking;
