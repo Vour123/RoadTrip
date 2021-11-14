@@ -23,6 +23,7 @@ const BookingBox = () => {
     const { id } = useParams();
 
     const handleSubmit = (e) => {
+        if (!sessionUser) return window.alert('You must be logged in to book a car!')
         e.preventDefault();
         const bookingInfo = {
             carId: id,

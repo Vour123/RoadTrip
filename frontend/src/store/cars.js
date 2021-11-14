@@ -1,10 +1,10 @@
-import NewListing from '../components/NewListing';
 import { csrfFetch } from './csrf';
 
 const GET_CARS = 'car/getCars';
 const GET_ONE_CAR = 'car/getCar'
 const DELETE_LISTINGS = 'lisitng/deleteListing';
 const NEW_LISTING = 'listing/postListing';
+const UPDATE_CAR_LISTING = 'listing/updateListing';
 
 
 const getCars = (cars) => ({
@@ -41,12 +41,10 @@ const carReducer = (state = {all: {},current: {}}, action) => {
         case GET_CARS:
             newState = {...state};
             action.cars.forEach((car) => {
-                // newState[car.id] = car ;
                 newState.all[car.id] = car
             })
             return newState;
         case GET_ONE_CAR:
-            // newState = {...state, [action.car.id]:action.car}
             newState = {...state};
             newState.current = action.car
             return newState;
@@ -57,6 +55,12 @@ const carReducer = (state = {all: {},current: {}}, action) => {
         case NEW_LISTING:
             newState = {...state};
             newState.all[action.listing.id] = action.listing
+            return newState;
+        case UPDATE_CAR_LISTING:
+            console.log('this is the action for u cars', action.listing);
+            newState = {...state}
+            newState.all[action.listing.id] = action.listing;
+            newState.current.Images[0].url = action.listing.Images[0].url;
             return newState;
         default:
             return state;

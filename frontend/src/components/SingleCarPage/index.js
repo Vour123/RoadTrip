@@ -4,6 +4,7 @@ import { NavLink, useParams } from 'react-router-dom';
 import  BookingBox  from "../BookingBox"; 
 import { getCar } from "../../store/cars";
 import OwnerListingModal from "../OwnerListingModal";
+import OwnerEditModal from "../OwnerEditModal";
 import Cars from "../CarCards";
 import './SingleCar.css';
 
@@ -13,8 +14,6 @@ const OneCar = () => {
     const [isLoaded, setIsLoaded] = useState(false);
     const dispatch = useDispatch();
     const { id } = useParams();
-    console.log('oneCar state', oneCar);
-    
 
     useEffect(() => {
         dispatch(getCar(id)).then(() => setIsLoaded(true));
@@ -25,19 +24,22 @@ const OneCar = () => {
         <div className='single-car-page'>
             { oneCar ? 
             (<div>
-                <img class="single-car-image" src={oneCar?.Images[0].url}></img>
+                <img className="single-car-image" src={oneCar?.Images[0].url}></img>
                 <span className="single-car-name">{oneCar?.name}</span>
                 <span className="single-car-price">{oneCar?.price}</span>
                 <span className="single-car-city">{oneCar?.city}</span>
                 <span className="single-car-texas">{oneCar?.state}</span>
             </div>)
             :null}
-            {sessionUser.id !== oneCar?.userId ? 
+            {sessionUser?.id !== oneCar?.userId ? 
                 <div className='book-container'>
-                    <h3 className='book-car-now'>Book this {oneCar.name} Now!</h3>
+                    <h3 className='book-car-now'>Book this {oneCar?.name} Now!</h3>
                     <BookingBox />
                 </div>
-                :<OwnerListingModal/>}
+                :<>
+                <OwnerListingModal/>
+                <OwnerEditModal/>
+                </>}
         </div>
     );
 }

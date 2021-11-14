@@ -1,20 +1,20 @@
 import React, { useState } from 'react';
 import { Modal } from '../../context/Modal';
-import OwnerPopUp from './OwnerPopUp';
+import OwnerEdit from './OwnerEdit';
 
-const OwnerListingModal = () => {
+const OwnerEditModal = () => {
     const [showModal, setShowModal] = useState(false);
 
     return (
         <>
-          <button onClick={() => setShowModal(true)}>Delete this listing</button>
+          <button onClick={() => setShowModal(true)}>Edit this listing's information</button>
           {showModal && (
             <Modal onClose={() => setShowModal(false)}>
-                <OwnerPopUp setShowModal={setShowModal}/>
+                <OwnerEdit setShowModal={setShowModal}/>
             </Modal>
           )}
         </>
       );
 }   
 
-export default OwnerListingModal;
+export default OwnerEditModal;

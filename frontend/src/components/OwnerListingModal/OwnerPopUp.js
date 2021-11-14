@@ -20,15 +20,10 @@ const OwnerPopUp = ({setShowModal}) => {
         history.push('/listings')
     }
 
-    // const handleEdit () => {
-
-    // }
-
     return(
         <div className='owner-confirmation'>
             <p>Are you sure you want to delete this listing?</p>
             <button onClick={handleDelete}>Delete this listing</button>
-            <button>Edit this Listing</button>
         </div>
     )
 }

@@ -5,6 +5,7 @@ const asyncHandler = require("express-async-handler");
 const router = express.Router();
 const db = require('../../db/models');
 
+
 const { Car, Image, User } = db;
 
 router.get('/:id(\\d+)', asyncHandler(async(req, res) => {
@@ -28,7 +29,6 @@ router.delete('/:id(\\d+)', asyncHandler(async(req, res) => {
 }));
 
 router.post('/', asyncHandler(async(req,res) => {
-    console.log('req.bodyyyyyyy', req.body);
     const {userId, city, state, name, price, imageUrl} = req.body;
     const newCar = await Car.create({userId, city, state, name, price});
     const newImage = await Image.create({url: imageUrl, carId: newCar.id})
@@ -41,6 +41,20 @@ router.post('/', asyncHandler(async(req,res) => {
         return next(err);
         }
     return res.json(newCar);
+}));
+
+router.put('/:id(\\d+)', asyncHandler(async(req, res) => {
+    const listingId = req.params.id;
+    const { city, state, name, price, imageUrl } = req.body;
+    if(listingId) {
+        const image = await Image.findOne({where:{carId:listingId}}) 
+        await image.update({url: imageUrl});
+        const car = await Car.findByPk(listingId, {
+            include: [{model: Image}]
+        });
+        await car.update({city, state, name, price});
+        return res.json(car);
+    }
 }));
 
 

@@ -28,7 +28,7 @@ const ProfilePage = () => {
             <div className='owner-listing-container'>
                 <div className='owner-car-info'>
                     <h2>Your Listings!</h2>
-                    {listings.map(({id, Images, price, name}) => 
+                    {listings?.map(({id, Images, price, name}) => 
                     { return (
                         <div>
                             <NavLink to={`/cars/${id}`}>

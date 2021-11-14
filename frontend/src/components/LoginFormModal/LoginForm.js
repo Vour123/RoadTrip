@@ -1,13 +1,21 @@
 import React, { useState } from "react";
 import * as sessionActions from "../../store/session";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+import { useHistory } from "react-router";
+import  { Redirect } from 'react-router-dom';
 import './LoginFormModal.css'
 
 function LoginForm() {
   const dispatch = useDispatch();
+  const history = useHistory();
+  const sessionUser = useSelector(state => state.session.user)
   const [credential, setCredential] = useState("");
   const [password, setPassword] = useState("");
   const [errors, setErrors] = useState([]);
+
+  if(sessionUser) return (
+    <Redirect to ='/listings'/>
+  )
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -17,7 +25,7 @@ function LoginForm() {
         const data = await res.json();
         if (data && data.errors) setErrors(data.errors);
       }
-    );
+      );
   };
 
   return (
