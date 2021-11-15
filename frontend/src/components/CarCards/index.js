@@ -19,13 +19,16 @@ const Cars = () => {
             <div className='cars-grid-container'>
                 <div className='car-grid'>
                     {cars.length > 0 ? cars?.map(({id, Images, price, name}) => 
-                    { return (
-                        <div className='car-card-container'>
+                    { let imageUrl;
+                        if(Images?.length > 0) {
+                            imageUrl = Images[0].url
+                        } return (
+                        <div key={id} className='car-card-container'>
                             <NavLink to={`/cars/${id}`}>
                                 <CarCardDetails
                                 key={id}
                                 id={id}
-                                image={Images[0]?.url}
+                                image={imageUrl}
                                 name={name}
                                 price={price}
                                 />
