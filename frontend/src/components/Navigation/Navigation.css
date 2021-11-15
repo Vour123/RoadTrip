@@ -9,6 +9,33 @@
 .app-title{
     font-size: 1.5rem;
     margin: .5rem;
+    color: white;
+}
+
+.post-button{
+    list-style: none;
+    color: white;
+}
+
+.profile-dropdown{
+    list-style: none;
+}
+
+.profile-dropdown > li:hover,
+.user-name:hover,
+.post-button:hover {
+    color: grey;
+}
+
+.user-name{
+    color: white;
+}
+
+.nav-links > button{
+    height: 1.5rem;
+    width: 2rem;
+    margin-right: .5rem;
+    border-radius: .625rem;
 }
 
 .navlist-container{

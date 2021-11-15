@@ -1,0 +1,11 @@
+.edit-modal{
+    display: flex;
+    flex-direction: column;
+}
+
+.edit-modal > button{
+    position: relative;
+    border-radius: .625rem;
+    bottom: 8px;
+    background-color: transparent
+}

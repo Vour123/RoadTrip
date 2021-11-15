@@ -25,9 +25,8 @@ function Navigation({ isLoaded }){
 
   return (
     <header className='navbar-container'>
-      {/* <img className='logo' src={jeep}></img> */}
       <nav className='navbar'>
-        <div className='app-title'>RoadTrip</div>
+        <a className='app-title' href='/'>RoadTrip</a>
         <div className='navbar-links'>
         <ul className='navlist-container'>
             <li className='nav-links'>

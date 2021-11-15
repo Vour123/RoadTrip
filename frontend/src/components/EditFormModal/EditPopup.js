@@ -4,6 +4,7 @@ import { useHistory } from "react-router";
 import { DateRange } from 'react-date-range';
 import { updateBookingDates } from '../../store/bookings';
 
+import './EditFormModal.css';
 import 'react-date-range/dist/styles.css'; // main style file
 import 'react-date-range/dist/theme/default.css'; // theme css file
 

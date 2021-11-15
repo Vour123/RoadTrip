@@ -43,7 +43,7 @@ function ProfileButton({ user }) {
       </button>
       {showMenu && (
         <ul className="profile-dropdown">
-          <NavLink to={`/profile/${id}`}>{user.username}</NavLink>
+          <NavLink className='user-name' to={`/profile/${id}`}>{user.username}</NavLink>
           <li>
             <a className='post-button' href='/new-listing'>Post Your Car!</a>
           </li>

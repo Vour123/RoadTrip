@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { NavLink, useParams, useHistory } from 'react-router-dom';
-import { getUserBooking, unreserve } from '../../store/bookings';
+import { getUserBooking } from '../../store/bookings';
 import { getListings } from '../../store/listings';
 import EditFormModal from '../EditFormModal';
 import DeleteConfirmationModal from '../DeleteConfirmationModal';
@@ -13,6 +13,8 @@ const ProfilePage = () => {
     const listings = useSelector(state => Object.values(state.listings.all))
     const [isLoaded, setIsLoaded] = useState(false);
     const history = useHistory();
+
+    if(!sessionUser) history.push('/listings')
         
     const dispatch = useDispatch();
     const { id } = useParams();
@@ -27,30 +29,32 @@ const ProfilePage = () => {
         <>
             <div className='owner-listing-container'>
                 <div className='owner-car-info'>
-                    <h2>Your Listings!</h2>
-                    {listings?.map(({id, Images, price, name}) => 
-                    { return (
-                        <div>
-                            <NavLink to={`/cars/${id}`}>
-                                <CarCardDetails
-                                key={id}
-                                id={id}
-                                image={Images[0].url}
-                                name={name}
-                                price={price}
-                                />
-                            </NavLink>
-                        </div>
-                        )
-                    })}
+                <div className='user-info'>
+                        <h1 className='profile-user-name'> Welcome {sessionUser.username}!</h1>
+                    </div>
+                    {listings ? 
+                        listings?.map(({id, Images, price, name}) => 
+                        { return (
+                            <div>
+                                <h2>Your Listings!</h2>
+                                <NavLink to={`/cars/${id}`}>
+                                    <CarCardDetails
+                                    key={id}
+                                    id={id}
+                                    image={Images[0].url}
+                                    name={name}
+                                    price={price}
+                                    />
+                                </NavLink>
+                            </div>
+                            )
+                        })
+                         :null}
                 </div>
             </div>
             <div className='reservation-box'>
                 {booking.length > 0 ? 
                 <>
-                    <div className='user-info'>
-                        <h1 className='user-name'>{sessionUser.username}</h1>
-                    </div>
                     <div className='user-booking-info-container'>
                         <p>You have a reservation for a: {booking[0].Car?.name}</p>
                         <p> starting on: {booking[0]?.startDate}</p>
@@ -61,7 +65,7 @@ const ProfilePage = () => {
                 </>
                 :<>
                     <div className='user-info'>
-                        <h1 className='user-name'>{sessionUser.username}</h1>
+                        <h1 className='profile-user-name'>{sessionUser.username}</h1>
                     </div>
                     <h5>You have no current reservations!</h5>
                 </>}
