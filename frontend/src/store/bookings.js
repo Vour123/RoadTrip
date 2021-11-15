@@ -72,7 +72,6 @@ export const postBooking = (bookingInfo) => async(dispatch) => {
 export const getUserBooking = (id) => async(dispatch) => {
     const res = await csrfFetch(`/api/users/profile/${id}`);
     const userBookings = await res.json();
-
     if(res.ok) {
         dispatch(getBooking(userBookings))
         return userBookings;

@@ -11,6 +11,7 @@
 }
 
 .modal-button{
+    margin: .3rem;
     display: inline-block;
     border: none;
     text-align: center;
@@ -23,10 +24,31 @@
 
 }
 
+#modal-content{
+    border-radius: .625rem;
+}
+
+.modal-button{
+    background-color: lightgrey;
+    border-radius: .3rem;
+}
+
+.modal-button:hover{
+    background-color: grey;
+}
+
 .login-button > button {
     margin-top: 1rem;
     border: 1px solid;
     background-color: white;
     border-radius: .25rem;
+    width: 4rem;
+    height: 2.5rem;
+}
+
+.login-button > button:hover{
+    background-color: black;
+    color: white;
+    transform: scale(1.025);
 }
 

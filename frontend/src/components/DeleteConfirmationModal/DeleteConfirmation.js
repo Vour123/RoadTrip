@@ -1,23 +1,22 @@
-import { useState, useEffect } from "react";
+import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { useHistory, useParams } from "react-router";
+import { useParams } from "react-router";
 import { getUserBooking } from "../../store/bookings";
 import { unreserve } from "../../store/bookings";
 
-const DeletePopUp = () => {
+const DeletePopUp = ({setShowModal}) => {
     const booking = useSelector(state => Object.values(state.booking.all));
-    const sessionUser = useSelector(state => state.session.user)
-    const history = useHistory();
     const dispatch = useDispatch();
-
+    const bookingId = booking[0].id
     const { id } = useParams();
 
      useEffect(() => {
         dispatch(getUserBooking(id))
     },[dispatch, id])
 
-    const handleDelete = (bookingId) => {
+    const handleDelete = () => {
         dispatch(unreserve(bookingId))
+        setShowModal(false)
     }
 
     return (
@@ -29,7 +28,6 @@ const DeletePopUp = () => {
         </div>
 
     );
-
 }
 
 export default DeletePopUp;

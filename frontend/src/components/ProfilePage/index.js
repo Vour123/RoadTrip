@@ -16,10 +16,10 @@ const ProfilePage = () => {
         
     const dispatch = useDispatch();
     const { id } = useParams();
-    console.log('listings', listings[0]);
+    const userId = sessionUser.id;
 
      useEffect(() => {
-        dispatch(getUserBooking(id)).then(() => setIsLoaded(true));
+        dispatch(getUserBooking(userId)).then(() => setIsLoaded(true));
         dispatch(getListings(id)).then(() => setIsLoaded(true));
     },[dispatch, id])
 

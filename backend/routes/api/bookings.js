@@ -7,8 +7,6 @@ const db = require('../../db/models');
 
 const { Booking } = db;
 
-const validateBooking = [];
-
 router.get('/', asyncHandler(async(req, res) => {
     const booking = await Booking.findAll();
     res.json({booking});

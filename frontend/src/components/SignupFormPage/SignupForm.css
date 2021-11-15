@@ -1,0 +1,17 @@
+.signup-form-container{
+    display: flex;
+    justify-content: center;    
+}
+
+.signup-form{
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+    justify-content: space-between;
+    height: fit-content;
+}
+
+.signup-form > button {
+    margin: .3rem;
+}
+
