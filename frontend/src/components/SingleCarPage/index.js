@@ -23,12 +23,16 @@ const OneCar = () => {
     return isLoaded && ( 
         <div className='single-car-page'>
             { oneCar ? 
-            (<div>
-                <img className="single-car-image" src={oneCar?.Images[0].url}></img>
-                <span className="single-car-name">{oneCar?.name}</span>
-                <span className="single-car-price">{oneCar?.price}</span>
-                <span className="single-car-city">{oneCar?.city}</span>
-                <span className="single-car-texas">{oneCar?.state}</span>
+            (<div className='all-car-details'>
+                <div className='car-image-container'>
+                    <img className="single-car-image" src={oneCar?.Images[0].url}></img>
+                </div>
+                <div className='car-details-single'>
+                    <span className="single-car-name">{oneCar?.name}</span>
+                    <span className="single-car-price">{oneCar?.price}/day</span>
+                    <span className="single-car-city">{oneCar?.city}</span>
+                    <span className="single-car-texas">{oneCar?.state}</span>
+                </div>
             </div>)
             :null}
             {sessionUser?.id !== oneCar?.userId ? 

@@ -4,6 +4,7 @@ import { NavLink, useHistory, useParams } from 'react-router-dom';
 import { DateRange } from 'react-date-range';
 import { postBooking } from '../../store/bookings';
 
+import './BookingBox.css'
 import 'react-date-range/dist/styles.css'; // main style file
 import 'react-date-range/dist/theme/default.css'; // theme css file
 

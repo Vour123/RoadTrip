@@ -1,7 +1,28 @@
 /* keep */
-/* .single-car-image{
-    width: 100%;
+.single-car-image{
+    max-width: 100%;
+    box-sizing: border-box;
     height: 100%;
     position: absolute;
     object-fit: cover;
-} */
+    position: absolute;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    display: block;
+    width: 100%;
+}
+
+.car-image-container{
+    box-sizing: content-box;
+    height: 100px;
+    padding-bottom: 35%;
+    position: relative;
+    width: 100%;
+}
+.car-details-single{
+    display: flex;
+    font-size: 24px;
+    font-weight: 700;
+    justify-content: space-around;
+}

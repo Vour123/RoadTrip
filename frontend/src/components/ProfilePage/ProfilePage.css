@@ -1,0 +1,15 @@
+.reservation-box{
+    display: flex;
+    justify-content: center;
+    margin-top: 1rem;
+}
+
+.reservation-box > button {
+    border: none;
+    background-color: transparent;
+}
+
+.reservation-box > button:hover {
+    background-color: black;
+    color:white
+}

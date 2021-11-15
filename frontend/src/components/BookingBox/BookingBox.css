@@ -1,0 +1,26 @@
+.date-selector{
+    display: flex;
+    flex-direction: column;
+}
+
+.booking-form{
+    width: fit-content;
+}
+
+.date-selector > button{
+    position: relative;
+    bottom: 20px;
+    border: none;
+    background-color: transparent;
+}
+.date-selector > button:hover{
+    background-color: #333333;
+    border-radius: .7rem;
+    color:whitesmoke
+}
+
+.book-container{
+    display: flex;
+    justify-content: space-around;
+    padding-top: 1rem;
+}
