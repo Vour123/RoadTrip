@@ -8,6 +8,7 @@ import  Cars  from "./components/CarCards";
 import OneCar from "./components/SingleCarPage";
 import ProfilePage from "./components/ProfilePage";
 import NewListing from "./components/NewListing";
+import HomePage from "./components/HomePage";
 
 function App() {
   const dispatch = useDispatch();
@@ -22,7 +23,7 @@ function App() {
       {isLoaded && (
         <Switch>
           <Route exact path='/'>
-            <h1>homepage</h1>
+            <HomePage/>
           </Route>
           <Route path="/signup">
             <SignupFormPage />

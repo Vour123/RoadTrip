@@ -1,14 +1,40 @@
-.nav-bar{
+.navbar{
     display: flex;
-    justify-content: flex-end;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #333;
+    color: white;
+}
+
+.app-title{
+    font-size: 1.5rem;
+    margin: .5rem;
+}
+
+.navlist-container{
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+}
+
+.nav-links{
+    list-style: none;
 }
 
 .nav-button{
-    padding: 10px;
     text-decoration: none;
+    color: white;
+    padding: 1rem;
+    display: block;
 }
 
-.profile-icon{
-    text-decoration: none;
+.nav-links:hover{
+    background-color: #555;
 }
 
+.nav-links > i,
+.nav-links > button{
+    text-decoration: none;
+    border: 1px solid white;
+}
