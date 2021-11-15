@@ -15,19 +15,24 @@ const Cars = () => {
 
     return (
         <div>
-            <div className='cars-cards-container'>
-                {cars.length > 0 ? cars.map(({id, Images, price, name}) => 
-                { return (
-                    <NavLink to={`/cars/${id}`}>
-                        <CarCardDetails
-                        key={id}
-                        id={id}
-                        image={Images[0].url}
-                        name={name}
-                        price={price}
-                        />
-                    </NavLink>)
-                }): null}
+            <h1 className='title-allcars'> All Cars Available</h1>
+            <div className='cars-grid-container'>
+                <div className='car-grid'>
+                    {cars.length > 0 ? cars?.map(({id, Images, price, name}) => 
+                    { return (
+                        <div className='car-card-container'>
+                            <NavLink to={`/cars/${id}`}>
+                                <CarCardDetails
+                                key={id}
+                                id={id}
+                                image={Images[0]?.url}
+                                name={name}
+                                price={price}
+                                />
+                            </NavLink>
+                        </div>)
+                    }): null}
+                </div>
             </div>
         </div>
     );

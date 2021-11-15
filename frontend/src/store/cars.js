@@ -60,7 +60,8 @@ const carReducer = (state = {all: {},current: {}}, action) => {
             console.log('this is the action for u cars', action.listing);
             newState = {...state}
             newState.all[action.listing.id] = action.listing;
-            newState.current.Images[0].url = action.listing.Images[0].url;
+            newState.current = action.listing
+            newState.current = {...newState.current};
             return newState;
         default:
             return state;
