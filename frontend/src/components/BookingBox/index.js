@@ -34,7 +34,7 @@ const BookingBox = () => {
         };
         dispatch(postBooking(bookingInfo));
 
-        history.push(`/profile/${id}`);
+        history.push(`/profile/${sessionUser.id}`);
     };  
 
     const handleSelect = (ranges) => {
