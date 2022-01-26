@@ -26,7 +26,12 @@ function Navigation({ isLoaded }){
   return (
     <header className='navbar-container'>
       <nav className='navbar'>
-        <a className='app-title' href='/'>RoadTrip</a>
+        <div className='logo-container'>
+          <a className='logo-container' href='/'>
+            <img className='jeep-logo'src={jeep}></img>
+            <span className='app-title' >RoadTrip</span>
+          </a>
+        </div>
         <div className='navbar-links'>
         <ul className='navlist-container'>
             <li className='nav-links'>
@@ -35,9 +40,7 @@ function Navigation({ isLoaded }){
             <li className='nav-links'>
               <NavLink to='/listings' className='nav-button'>Listings</NavLink>
             </li>
-            <li className='nav-links'>
               {isLoaded && sessionLinks}
-            </li>
           </ul>
         </div>
       </nav>

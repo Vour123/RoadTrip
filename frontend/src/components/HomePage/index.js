@@ -10,7 +10,7 @@ const HomePage = () => {
                 <div className='homepage-content'>
                     <h1 className='homepage-title'>Welcome To RoadTrip!</h1>
                     <h3 className='homepage-description'>
-                        RoadTrip is the place to app to go to for your renting car needs!
+                        RoadTrip is the place to go to for your renting car needs!
                     </h3>
                     {sessionUser ? 
                         null:
