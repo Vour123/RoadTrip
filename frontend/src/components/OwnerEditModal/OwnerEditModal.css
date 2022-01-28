@@ -1,0 +1,40 @@
+.create-form-box{
+    display: flex;
+    width: 15rem;
+    height: 25rem;
+    justify-content: space-around;
+    flex-direction: column;
+    align-items: center;
+}
+
+.form{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 2rem;
+    width: 85%;
+}
+
+.title{
+    font-size: 1.4vw;
+    font-weight: 850;
+}
+
+.button{
+    display: flex;
+    justify-content: center;
+    border: 1px solid black;
+    border-radius: 4px;
+}
+
+.button:hover{
+    border: 1px solid white;
+    background-color: black;
+    color: white;
+}
+
+.form > input {
+    border-radius: 3px;
+    outline: none;
+    border: 1px solid #333;
+}

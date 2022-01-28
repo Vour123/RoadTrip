@@ -1,0 +1,22 @@
+.owner-confirmation{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 28.5rem;
+    align-items: center;
+}
+
+.delete-button{
+    margin-bottom: .5rem;
+    border-radius: 5px;
+    background-color: white;
+    color: black;
+    padding: .5rem;
+    border: 1px solid black;
+}
+
+.delete-button:hover{
+    background-color: black;
+    color: white;
+    border: 1px solid;
+}

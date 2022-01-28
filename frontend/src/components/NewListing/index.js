@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { NavLink, useParams, useHistory, Redirect } from 'react-router-dom';
 import { newListing } from '../../store/listings';
+import './NewListing.css'
 
 const NewListing = () => {
     const dispatch = useDispatch();
@@ -31,11 +32,10 @@ const NewListing = () => {
     if (!sessionUser) return <Redirect to = '/' />;
 
     return (
-        <div>
+        <div className='container'>
             <h1 className='title'>
                 List your car down below!
             </h1>
-            <div className='create-form-box'>
                 <form className='form' onSubmit={handleSubmit}>
                     <input 
                     className='input-image' 
@@ -76,7 +76,6 @@ const NewListing = () => {
                         Submit Listing
                     </button>
                 </form>
-            </div>
         </div>
     );
 

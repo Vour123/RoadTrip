@@ -2,6 +2,8 @@ import React, { useState, useEffect } from "react";
 import { useDispatch, useSelector } from 'react-redux';
 import { NavLink, useHistory } from "react-router-dom";
 import * as sessionActions from '../../store/session';
+import './Navigation.css'
+// import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 
 function ProfileButton({ user }) {
   const dispatch = useDispatch();
@@ -36,11 +38,11 @@ function ProfileButton({ user }) {
 
   return (
     <>
-      <button onClick={openMenu}>
-        <div className='profile-icon'>
+      <a onClick={openMenu} className="profile-icon">
+        <div className="far-box">
           <i className="far fa-user" />
         </div>
-      </button>
+      </a>
       {showMenu && (
         <ul className="profile-dropdown">
           <NavLink className='user-name' to={`/profile/${id}`}>{user.username}</NavLink>

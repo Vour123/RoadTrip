@@ -1,16 +1,16 @@
 /* keep */
 .single-car-image{
-    max-width: 100%;
-    box-sizing: border-box;
     height: 100%;
-    position: absolute;
     object-fit: cover;
     position: absolute;
-    background-position: center;
-    background-size: cover;
-    background-repeat: no-repeat;
-    display: block;
     width: 100%;
+    zoom: 55%;
+}
+
+.single-car-price{
+    font-weight: 900;
+    font-size: 1.5vw;
+    margin: 1rem 0 ;
 }
 
 .car-image-container{
@@ -23,6 +23,52 @@
 .car-details-single{
     display: flex;
     font-size: 24px;
+    flex-direction: column;
     font-weight: 700;
     justify-content: space-around;
+    margin: 1rem 0;
+}
+
+.book-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+}
+
+
+.information-box{
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+}
+
+.location{
+    font-weight: 400;
+    font-size: 1vw;
+}
+
+.single-car-city{
+    margin-right: .2rem;
+}
+
+.owner-buttons-container{
+    display: flex;
+    flex-direction: column;
+}
+
+.owner-button{
+    margin: .5rem;
+    padding: .25rem;
+    font-size: 1.3vw;
+    cursor: pointer;
+    background-color: white;
+    border: 1px solid black;
+    border-radius: 3px;
+    display: flex;
+    justify-content: center;
+}
+
+.owner-button:hover{
+    background-color: black;
+    color: white;
 }

@@ -22,5 +22,10 @@
   "bugs": {
     "url": "https://github.com/Vour123/Authenticate-Me/issues"
   },
-  "homepage": "https://github.com/Vour123/Authenticate-Me#readme"
+  "homepage": "https://github.com/Vour123/Authenticate-Me#readme",
+  "dependencies": {
+    "@emotion/react": "^11.7.1",
+    "@emotion/styled": "^11.6.0",
+    "@mui/icons-material": "^5.3.1"
+  }
 }
